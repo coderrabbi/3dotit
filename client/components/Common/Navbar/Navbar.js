@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 
 const menuItems = [
     {
@@ -37,6 +37,10 @@ const menuItems = [
 
 const Navbar = () => {
     const router = useRouter();
+    const [isMenu, setIsMenu] = useState(false);
+    const toggleMenu = () => {
+        setIsMenu(!isMenu);
+    };
 
     return (
         <header className="">
@@ -103,7 +107,9 @@ const Navbar = () => {
                         className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
                         id="mobile-menu-2"
                     >
-                        <ul className="flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <ul
+                            className={`flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0`}
+                        >
                             {menuItems.map((item) => (
                                 <li key={item.id}>
                                     <Link
@@ -135,6 +141,74 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
+                    <div className="block lg:hidden pb-2">
+                        <label className="btn btn-circle swap swap-rotate">
+                            <input type="checkbox" onChange={toggleMenu} />
+
+                            <svg
+                                className="swap-off fill-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                viewBox="0 0 512 512"
+                            >
+                                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                            </svg>
+
+                            <svg
+                                className="swap-on fill-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                viewBox="0 0 512 512"
+                            >
+                                <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                            </svg>
+                        </label>
+                    </div>
+                    {isMenu && (
+                        <div
+                            className={`flex justify-between border-t-2 border-orange-500  w-full mx-auto lg:hidden ${
+                                isMenu
+                                    ? 'animate-in slide-in-from-left duration-300'
+                                    : 'animate-out slide-out-from-left duration-300'
+                            } `}
+                        >
+                            <ul
+                                className={`flex flex-col justify-center items-center w-full mx-auto font-medium`}
+                            >
+                                {menuItems.map((item) => (
+                                    <li key={item.id}>
+                                        <Link
+                                            href={`${item.path}`}
+                                            className={`${
+                                                router.asPath === item.path
+                                                    ? 'border-b-2 border-orange-500 text-orange-500'
+                                                    : ''
+                                            } block py-2 pr-4 pl-3 text-slate-900 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
+                                            aria-current="page"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                                <li>
+                                    <span className="flex justify-between items-center gap-3">
+                                        <Link href="/auth/login">
+                                            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded py-2 px-3">
+                                                Login
+                                            </button>
+                                        </Link>
+                                        <Link href="/auth/register">
+                                            <button className="border border-blue-500 hover:bg-blue-600 text-slate-900 hover:text-white rounded py-2 px-3">
+                                                Register
+                                            </button>
+                                        </Link>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </nav>
         </header>
