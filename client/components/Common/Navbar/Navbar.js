@@ -1,22 +1,58 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
+const menuItems = [
+    {
+        name: 'Home',
+        path: '/',
+        id: 1,
+    },
+    {
+        name: 'Services',
+        path: '/services',
+        id: 2,
+    },
+    {
+        name: 'Features',
+        path: '/features',
+        id: 3,
+    },
+    {
+        name: 'Teams',
+        path: '/teams',
+        id: 4,
+    },
+    {
+        name: 'About Us',
+        path: '/about',
+        id: 5,
+    },
+    {
+        name: 'Contact',
+        path: '/contact',
+        id: 6,
+    },
+];
+
 const Navbar = () => {
+    const router = useRouter();
+
     return (
-        <div>
-            <header>
-                <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-                    <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                        <a href="https://flowbite.com" className="flex items-center">
-                            <img
-                                src="https://flowbite.com/docs/images/logo.svg"
-                                className="mr-3 h-6 sm:h-9"
-                                alt="Flowbite Logo"
-                            />
-                            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                                Flowbite
-                            </span>
-                        </a>
-                        <div className="flex items-center lg:order-2">
+        <header className="">
+            <nav className="bg-slate-700/70 lg:w-full backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                    <Link href="/" className="flex items-center">
+                        <img
+                            src="/assets/3dotit.svg"
+                            className="mr-3 h-6 sm:h-9"
+                            alt="Flowbite Logo"
+                        />
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                            3DotIt
+                        </span>
+                    </Link>
+                    {/* <div className="flex items-center lg:order-2">
                             <a
                                 href="#"
                                 className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
@@ -62,67 +98,46 @@ const Navbar = () => {
                                     ></path>
                                 </svg>
                             </button>
-                        </div>
-                        <div
-                            className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-                            id="mobile-menu-2"
-                        >
-                            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                        </div> */}
+                    <div
+                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+                        id="mobile-menu-2"
+                    >
+                        <ul className="flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            {menuItems.map((item) => (
+                                <li key={item.id}>
+                                    <Link
+                                        href={`${item.path}`}
+                                        className={`${
+                                            router.asPath === item.path
+                                                ? 'border-b-2 border-orange-500 text-orange-500'
+                                                : ''
+                                        } block py-2 pr-4 pl-3 text-slate-900 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
                                         aria-current="page"
                                     >
-                                        Home
-                                    </a>
+                                        {item.name}
+                                    </Link>
                                 </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                                    >
-                                        Company
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                                    >
-                                        Marketplace
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                                    >
-                                        Features
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                                    >
-                                        Team
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                                    >
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                            ))}
+                            <li>
+                                <span className="flex justify-between items-center gap-3">
+                                    <Link href="/auth/login">
+                                        <button className="bg-blue-500 hover:bg-blue-600 text-white rounded py-2 px-3">
+                                            Login
+                                        </button>
+                                    </Link>
+                                    <Link href="/auth/register">
+                                        <button className="border border-blue-500 hover:bg-blue-600 text-slate-900 hover:text-white rounded py-2 px-3">
+                                            Register
+                                        </button>
+                                    </Link>
+                                </span>
+                            </li>
+                        </ul>
                     </div>
-                </nav>
-            </header>
-        </div>
+                </div>
+            </nav>
+        </header>
     );
 };
 
