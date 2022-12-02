@@ -232,9 +232,9 @@ export function MainHeader() {
                     <Group className={classes.hiddenMobile}>
                         <Button variant="default">Log in</Button>
                         <Link href="/auth/register">
-                            <button className="border border-blue-500 bg-blue-600 text-white hover:text-white rounded py-2 px-3">
+                            <Button className="border border-blue-500 bg-blue-600 text-white hover:text-white rounded py-2 px-3">
                                 Register
-                            </button>
+                            </Button>
                         </Link>
                         {/* <Button>Sign up</Button> */}
                     </Group>

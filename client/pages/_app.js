@@ -19,6 +19,8 @@ function MyApp({ Component, pageProps }) {
                 withNormalizeCSS
                 theme={{
                     /** Put your mantine theme override here */
+                    fontFamily:
+                        '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
                     colorScheme: 'light',
                 }}
             >
