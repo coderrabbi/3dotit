@@ -231,7 +231,12 @@ export function MainHeader() {
 
                     <Group className={classes.hiddenMobile}>
                         <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
+                        <Link href="/auth/register">
+                            <button className="border border-blue-500 bg-blue-600 text-white hover:text-white rounded py-2 px-3">
+                                Register
+                            </button>
+                        </Link>
+                        {/* <Button>Sign up</Button> */}
                     </Group>
 
                     <Burger
@@ -277,7 +282,12 @@ export function MainHeader() {
 
                     <Group position="center" grow pb="xl" px="md">
                         <Button variant="default">Log in</Button>
-                        <Button variant="default">sign up</Button>
+                        <Link href="/auth/register">
+                            <button className="border border-blue-500 bg-blue-600 text-white hover:text-white rounded py-2 px-3">
+                                Register
+                            </button>
+                        </Link>
+                        {/* <Button color="cyan">sign up</Button> */}
                     </Group>
                 </ScrollArea>
             </Drawer>
