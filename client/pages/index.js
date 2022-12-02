@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Router from 'next/router';
 import HomeScreen from '../components/HomeScreen/HomeScreen';
 import Loader from '../components/Common/Loader/Loader';
+import { MainHeader } from '../components/Common/Navbar/Header';
 
 export default function Home() {
     const [loading, setLoading] = useState(false);

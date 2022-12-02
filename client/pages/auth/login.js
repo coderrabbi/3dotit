@@ -13,6 +13,7 @@ const login = () => {
         <Layout>
             <Head>
                 <title>Please Login</title>
+                <link rel="icon" href="/assets/3dotit.svg" />
             </Head>
             <div className="w-full mx-auto py-10">
                 <h1 className="text-center mx-auto text-5xl text-slate-800 border-b-2 border-slate-800 w-fit ">
@@ -20,7 +21,7 @@ const login = () => {
                 </h1>
                 <div className="flex justify-center items-center gap-20 py-5">
                     <div className="animate-in slide-in-from-left duration-500">
-                        <Lottie animationData={loginImage} loop={true} />
+                        <Lottie animationData={loginImage} className="h-[350px]" loop={true} />
                     </div>
                     <div className="animate-in slide-in-from-top duration-500 w-[350px]">
                         <form>
