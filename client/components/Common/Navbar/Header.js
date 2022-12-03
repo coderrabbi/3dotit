@@ -149,8 +149,12 @@ export function MainHeader() {
     ));
 
     return (
-        <Box>
-            <Header height={60} px="md">
+        <div>
+            <Header
+                height={60}
+                className="glassmorphism__header fixed border-b border-b-gray-500"
+                px="md"
+            >
                 <Group position="apart" sx={{ height: '100%' }}>
                     <Link href="/" className="flex items-center">
                         <img
@@ -252,7 +256,7 @@ export function MainHeader() {
                 onClose={closeDrawer}
                 size="100%"
                 padding="md"
-                title="Navigation"
+                title="3Dotit"
                 className={classes.hiddenDesktop}
                 zIndex={1000000}
             >
@@ -291,6 +295,6 @@ export function MainHeader() {
                     </Group>
                 </ScrollArea>
             </Drawer>
-        </Box>
+        </div>
     );
 }
