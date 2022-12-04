@@ -1,5 +1,6 @@
 import React from 'react';
 import { Banner } from '../Common/Banner/Banner';
+import { Features } from '../Common/Features/Features';
 
 import { Services } from '../Common/Services/Services';
 
@@ -11,6 +12,7 @@ const HomeScreen = () => {
             <Layout>
                 <Banner />
                 <Services />
+                <Features />
             </Layout>
         </>
     );
