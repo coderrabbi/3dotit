@@ -53,7 +53,6 @@ const useStyles = createStyles(
 
             social: {
                 color: theme.white,
-
                 '&:hover': {
                     color: theme.colors[theme.primaryColor][1],
                 },
@@ -105,7 +104,7 @@ const contact = () => {
 
                         <Group mt="xl">{icons}</Group>
                     </div>
-                    <div className={classes.form}>
+                    <div className={`${classes.form} `}>
                         <TextInput
                             label="Email"
                             placeholder="your@email.com"
