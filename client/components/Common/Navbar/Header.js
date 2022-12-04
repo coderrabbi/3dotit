@@ -154,7 +154,7 @@ export function MainHeader(props) {
     ));
 
     return (
-        <div>
+        <div className="mb-[60px]">
             <Header
                 height={60}
                 className="glassmorphism__header fixed border-b border-b-gray-500"
