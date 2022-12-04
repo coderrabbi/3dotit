@@ -1,11 +1,32 @@
 import '../styles/globals.css';
-import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
 
-function MyApp({ Component, pageProps }) {
+import Head from 'next/head';
+
+import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { getCookie, setCookie } from 'cookies-next';
+import { useState } from 'react';
+import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
+function MyApp(props) {
+    const { Component, pageProps } = props;
+    const [colorScheme, setColorScheme] = useState(props.colorScheme);
+    // const [colorScheme, setColorScheme] = useLocalStorage({
+    //     key: 'mantine-color-scheme',
+    //     defaultValue: 'dark',
+    //     getInitialValueInEffect: true,
+    // });
+
+    // const toggleColorScheme = (value) =>
+    //     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+
+    // useHotkeys([['mod+J', () => toggleColorScheme()]]);
+    const toggleColorScheme = (value) => {
+        const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
+        setColorScheme(nextColorScheme);
+        // when color scheme is updated save it to cookie
+        setCookie('mantine-color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
+    };
     return (
-        <AnimatePresence exitBeforeEnter>
+        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <Head>
                 <title>Page title</title>
                 <meta
@@ -21,13 +42,17 @@ function MyApp({ Component, pageProps }) {
                     /** Put your mantine theme override here */
                     fontFamily:
                         '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
-                    colorScheme: 'light',
+                    colorScheme,
                 }}
             >
                 <Component {...pageProps} />
             </MantineProvider>
-        </AnimatePresence>
+        </ColorSchemeProvider>
     );
 }
 
 export default MyApp;
+MyApp.getInitialProps = ({ ctx }) => ({
+    // get color scheme from cookie
+    colorScheme: getCookie('mantine-color-scheme', ctx) || 'dark',
+});

@@ -150,6 +150,17 @@ a {
     filter: blur(175px);
     transform: rotate(-114.2deg);
 }
+.gradient__footer {
+    position: absolute;
+    width: 404px;
+    height: 400px;
+    left: 20%;
+    top: 5%;
+
+    background: rgba(149, 66, 232, 0.35);
+    filter: blur(175px);
+    transform: rotate(-114.2deg);
+}
 
 .gradient-04 {
     position: absolute;

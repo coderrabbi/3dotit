@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <>
             {' '}
-            <div className="bg-slate-800/80 relative py-20">
-                <div className="gradient-02" />
+            <div className="">
+                <div className="" />
                 <div>
                     <div>Link</div>
                     <div>Right Side</div>
