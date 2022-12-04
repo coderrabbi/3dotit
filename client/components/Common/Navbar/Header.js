@@ -17,8 +17,6 @@ import {
     Collapse,
     ScrollArea,
     useMantineColorScheme,
-    ActionIcon,
-    Switch,
     SegmentedControl,
 } from '@mantine/core';
 
@@ -32,7 +30,6 @@ import {
     IconCoin,
     IconChevronDown,
     IconSun,
-    IconMoonStars,
     IconMoon,
 } from '@tabler/icons';
 import Link from 'next/link';

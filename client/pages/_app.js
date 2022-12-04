@@ -1,24 +1,12 @@
 import '../styles/globals.css';
-
 import Head from 'next/head';
-
-import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import { getCookie, setCookie } from 'cookies-next';
 import { useState } from 'react';
 import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
 function MyApp(props) {
     const { Component, pageProps } = props;
     const [colorScheme, setColorScheme] = useState(props.colorScheme);
-    // const [colorScheme, setColorScheme] = useLocalStorage({
-    //     key: 'mantine-color-scheme',
-    //     defaultValue: 'dark',
-    //     getInitialValueInEffect: true,
-    // });
 
-    // const toggleColorScheme = (value) =>
-    //     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-
-    // useHotkeys([['mod+J', () => toggleColorScheme()]]);
     const toggleColorScheme = (value) => {
         const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
         setColorScheme(nextColorScheme);
@@ -43,6 +31,18 @@ function MyApp(props) {
                     fontFamily:
                         '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
                     colorScheme,
+                    dark: [
+                        '#d5d7e0',
+                        '#acaebf',
+                        '#8c8fa3',
+                        '#666980',
+                        '#4d4f66',
+                        '#34354a',
+                        '#1E293B',
+                        '#1d1e30',
+                        '#0c0d21',
+                        '#01010a',
+                    ],
                 }}
             >
                 <Component {...pageProps} />
