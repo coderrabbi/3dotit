@@ -113,7 +113,17 @@
 //     );
 // }
 
-import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col } from '@mantine/core';
+import {
+    createStyles,
+    Title,
+    SimpleGrid,
+    Text,
+    Button,
+    ThemeIcon,
+    Grid,
+    Col,
+    Container,
+} from '@mantine/core';
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
@@ -182,7 +192,7 @@ export function Features() {
     return (
         <div className={classes.wrapper}>
             <Title className="text-center py-10">Services That We Provide</Title>
-            <Grid gutter={80}>
+            <Grid>
                 <Col span={12} md={5}>
                     <Title className={classes.title} order={2}>
                         A fully featured React components library for your next project
@@ -193,14 +203,8 @@ export function Features() {
                         you in any situation
                     </Text>
 
-                    <Button
-                        variant="gradient"
-                        gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
-                        size="lg"
-                        radius="md"
-                        mt="xl"
-                    >
-                        Get started
+                    <Button variant="default" color="orange">
+                        Get Started
                     </Button>
                 </Col>
                 <Col span={12} md={7}>

@@ -173,9 +173,9 @@ export function MainHeader(props) {
                     </Link>
 
                     <Group sx={{ height: '100%' }} spacing={0} className={classes.hiddenMobile}>
-                        <a href="#" className={classes.link}>
+                        <Link href="/" passHref className={classes.link}>
                             Home
-                        </a>
+                        </Link>
                         <HoverCard
                             width={600}
                             position="bottom"
@@ -233,9 +233,9 @@ export function MainHeader(props) {
                         <a href="#" className={classes.link}>
                             Learn
                         </a>
-                        <a href="#" className={classes.link}>
-                            Academy
-                        </a>
+                        <Link href="/contact" passHref className={classes.link}>
+                            Contact
+                        </Link>
                         <SegmentedControl
                             value={colorScheme}
                             onChange={(value) => toggleColorScheme(value)}
@@ -263,7 +263,11 @@ export function MainHeader(props) {
                     </Group>
 
                     <Group className={classes.hiddenMobile}>
-                        <Button variant="default">Log in</Button>
+                        <Button variant="default">
+                            <Link href="/auth/login" passHref>
+                                Log in
+                            </Link>
+                        </Button>
                         <Link href="/auth/register">
                             <Button className="border border-blue-500 bg-blue-600 text-white hover:text-white rounded py-2 px-3">
                                 Register
@@ -292,9 +296,9 @@ export function MainHeader(props) {
                 <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
                     <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
-                    <a href="#" className={classes.link}>
+                    <Link href="/" passHref className={classes.link}>
                         Home
-                    </a>
+                    </Link>
                     <UnstyledButton className={classes.link} onClick={toggleLinks}>
                         <Center inline>
                             <Box component="span" mr={5}>

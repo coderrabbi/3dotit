@@ -7,9 +7,8 @@ const useStyles = createStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-
-        backgroundImage:
-            'url(https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=980&q=80)',
+        width: '100%',
+        backgroundImage: 'url(../../../assets/3Dotit_instant_support.svg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
 
