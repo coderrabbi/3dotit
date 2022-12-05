@@ -3,9 +3,12 @@ import React from "react";
 const OurWorkingProcess = ({ styles }) => {
   return (
     <div>
-      <h1>this is our working process</h1>
       <div>
         <div className="bg-primary text-white py-8">
+          <div className="text-center uppercase text-[30px] font-bold text-secondary">
+            <h1> our working process</h1>
+          </div>
+
           <div className="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
             <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
               <p className="ml-2 text-secondary uppercase tracking-loose">
