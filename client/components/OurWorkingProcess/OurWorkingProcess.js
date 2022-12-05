@@ -4,12 +4,12 @@ const OurWorkingProcess = ({ styles }) => {
   return (
     <div>
       <div>
-        <div className="bg-primary text-white py-8">
-          <div className="text-center uppercase text-[30px] font-bold text-secondary">
+        <div id="#work" className="bg-primary text-white py-8  relative ">
+          <div className="text-center uppercase md:text-[30px] text-[18px] font-bold text-secondary">
             <h1> our working process</h1>
           </div>
 
-          <div className="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
+          <div className="container z-[10] relative mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
             <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
               <p className="ml-2 text-secondary uppercase tracking-loose">
                 Working Process
@@ -28,7 +28,7 @@ const OurWorkingProcess = ({ styles }) => {
                 Explore Now
               </a>
             </div>
-            <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
+            <div className="ml-0 md:ml-12 lg:w-2/3   relative z-[10]">
               <div className="container mx-auto w-full h-full">
                 <div className="relative wrap overflow-hidden p-10 h-full">
                   <div className="border-2 border-yellow-555 absolute left-[50%]   h-full rounded-sm"></div>
@@ -108,6 +108,9 @@ const OurWorkingProcess = ({ styles }) => {
                 />
               </div>
             </div>
+            <div className="absolute z-[0] w-[20%] h-[35%] top-0 pink__gradient" />
+            <div className="absolute z-[1] w-[60%] h-[80%] rounded-full white__gradient bottom-40" />
+            <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
           </div>
         </div>
       </div>
