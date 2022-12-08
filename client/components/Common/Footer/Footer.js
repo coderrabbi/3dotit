@@ -1,4 +1,3 @@
-import { Box, Text } from '@mantine/core';
 import Link from 'next/link';
 import React from 'react';
 import {
@@ -10,7 +9,7 @@ import {
 } from 'react-icons/fa';
 const Footer = () => {
     return (
-        <Box p={'md'} className="dark:bg-slate-700 bg-[#020e3b] relative z-50">
+        <div className="dark:bg-slate-700 bg-[#020e3b] p-10 relative z-50">
             {' '}
             <div className="dark:bg-slate-700  text-white">
                 <div className="flex justify-start items-center gap-2">
@@ -39,11 +38,11 @@ const Footer = () => {
                 </div>
             </div>
             <div className="text-center">
-                <Text py={'10px'} className="text-white">
+                <h2 className="text-white py-10">
                     &copy; 2023 || All Right Reserved by <a href="https://3dotit">3Dotit</a>
-                </Text>
+                </h2>
             </div>
-        </Box>
+        </div>
     );
 };
 

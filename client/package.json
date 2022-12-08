@@ -11,11 +11,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
-    "@mantine/carousel": "^5.9.0",
-    "@mantine/core": "^5.9.0",
-    "@mantine/hooks": "^5.9.0",
-    "@mantine/next": "^5.9.0",
-    "@tabler/icons": "^1.114.0",
     "cookies-next": "^2.1.1",
     "daisyui": "^2.40.1",
     "embla-carousel-autoplay": "^7.0.5",

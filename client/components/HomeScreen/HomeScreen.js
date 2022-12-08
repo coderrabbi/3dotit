@@ -1,25 +1,19 @@
-import React from "react";
-import { Banner } from "../Common/Banner/Banner";
-import { Faq } from "../Common/FAQ/FAQ";
-import { Features } from "../Common/Features/Features";
+import React from 'react';
 
-import { Services } from "../Common/Services/Services";
+import Hero from '../Hero/Hero';
 
-import Layout from "../Layout/Layout";
-import OurWorkingProcess from "../OurWorkingProcess/OurWorkingProcess";
+import Layout from '../Layout/Layout';
+import OurWorkingProcess from '../OurWorkingProcess/OurWorkingProcess';
 
 const HomeScreen = () => {
-  return (
-    <>
-      <Layout>
-        <Banner />
-        <Services />
-        <Features />
-        <OurWorkingProcess />
-        <Faq />
-      </Layout>
-    </>
-  );
+    return (
+        <>
+            <Layout>
+                <Hero />
+                <OurWorkingProcess />
+            </Layout>
+        </>
+    );
 };
 
 export default HomeScreen;

@@ -43,8 +43,8 @@ const Navbar = () => {
     };
 
     return (
-        <header className="">
-            <nav className="bg-slate-700/70 lg:w-full backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <header className="fixed w-full mx-auto animate-in z-[100]">
+            <nav className="bg-[#00072d1b] lg:w-full backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 text-white">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link href="/" className="flex items-center">
                         <img
@@ -104,11 +104,11 @@ const Navbar = () => {
                             </button>
                         </div> */}
                     <div
-                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1 text-white"
                         id="mobile-menu-2"
                     >
                         <ul
-                            className={`flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0`}
+                            className={`flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 text-white`}
                         >
                             {menuItems.map((item) => (
                                 <li key={item.id}>
@@ -128,12 +128,12 @@ const Navbar = () => {
                             <li>
                                 <span className="flex justify-between items-center gap-3">
                                     <Link href="/auth/login">
-                                        <button className="bg-blue-500 hover:bg-blue-600 text-white rounded py-2 px-3">
+                                        <button className="bg-primary_btn text-black rounded py-2 px-3">
                                             Login
                                         </button>
                                     </Link>
                                     <Link href="/auth/register">
-                                        <button className="border border-blue-500 hover:bg-blue-600 text-slate-900 hover:text-white rounded py-2 px-3">
+                                        <button className="border border-primary_btn hover:bg-primary_btn text-slate-900 rounded py-2 px-3">
                                             Register
                                         </button>
                                     </Link>
@@ -142,7 +142,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="block lg:hidden pb-2">
-                        <label className="btn btn-circle swap swap-rotate">
+                        <label className="swap text-black swap-rotate">
                             <input type="checkbox" onChange={toggleMenu} />
 
                             <svg
@@ -175,7 +175,7 @@ const Navbar = () => {
                             } `}
                         >
                             <ul
-                                className={`flex flex-col justify-center items-center w-full mx-auto font-medium`}
+                                className={`flex flex-col justify-center items-center w-full mx-auto font-medium text-white`}
                             >
                                 {menuItems.map((item) => (
                                     <li key={item.id}>
@@ -195,12 +195,12 @@ const Navbar = () => {
                                 <li>
                                     <span className="flex justify-between items-center gap-3">
                                         <Link href="/auth/login">
-                                            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded py-2 px-3">
+                                            <button className="bg-primary_btn rounded py-2 px-3">
                                                 Login
                                             </button>
                                         </Link>
                                         <Link href="/auth/register">
-                                            <button className="border border-blue-500 hover:bg-blue-600 text-slate-900 hover:text-white rounded py-2 px-3">
+                                            <button className="border border-primary_btn hover:bg-primary_btn text-slate-900 rounded py-2 px-3">
                                                 Register
                                             </button>
                                         </Link>

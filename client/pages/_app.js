@@ -1,8 +1,6 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import { getCookie, setCookie } from 'cookies-next';
-import { useState } from 'react';
-import { MantineProvider } from '@mantine/core';
+
 import { ThemeProvider } from 'next-themes';
 function MyApp(props) {
     const { Component, pageProps } = props;
@@ -17,17 +15,7 @@ function MyApp(props) {
                 />
             </Head>
 
-            <MantineProvider
-                withGlobalStyles
-                withNormalizeCSS
-                theme={{
-                    /** Put your mantine theme override here */
-                    fontFamily:
-                        '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
-                }}
-            >
-                <Component {...pageProps} />
-            </MantineProvider>
+            <Component {...pageProps} />
         </ThemeProvider>
     );
 }
