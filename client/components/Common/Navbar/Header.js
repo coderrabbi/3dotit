@@ -18,6 +18,7 @@ import {
     ScrollArea,
     useMantineColorScheme,
     SegmentedControl,
+    Switch,
 } from '@mantine/core';
 
 import { useDisclosure } from '@mantine/hooks';
@@ -31,8 +32,11 @@ import {
     IconChevronDown,
     IconSun,
     IconMoon,
+    IconMoonStars,
 } from '@tabler/icons';
 import Link from 'next/link';
+import { useState } from 'react';
+import ToggleTheme from './ToggleTheme';
 
 const useStyles = createStyles((theme) => ({
     link: {
@@ -133,8 +137,7 @@ export function MainHeader(props) {
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
     const { classes, theme } = useStyles();
-    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-    const dark = colorScheme === 'dark';
+
     const links = mockdata.map((item) => (
         <UnstyledButton className={classes.subLink} key={item.title}>
             <Group noWrap align="flex-start">
@@ -236,30 +239,8 @@ export function MainHeader(props) {
                         <Link href="/contact" passHref className={classes.link}>
                             Contact
                         </Link>
-                        <SegmentedControl
-                            value={colorScheme}
-                            onChange={(value) => toggleColorScheme(value)}
-                            data={[
-                                {
-                                    value: 'light',
-                                    label: (
-                                        <Center>
-                                            <IconSun size={16} stroke={1.5} />
-                                            <Box ml={10}>Light</Box>
-                                        </Center>
-                                    ),
-                                },
-                                {
-                                    value: 'dark',
-                                    label: (
-                                        <Center>
-                                            <IconMoon size={16} stroke={1.5} />
-                                            <Box ml={10}>Dark</Box>
-                                        </Center>
-                                    ),
-                                },
-                            ]}
-                        />
+
+                        <ToggleTheme />
                     </Group>
 
                     <Group className={classes.hiddenMobile}>

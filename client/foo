@@ -1,0 +1,11 @@
+==dark==
+Primary__bg: '#00072d'
+primary__btn: '#feb400'
+secondary__btn: '#a6e1fa'
+btn__text__color: black
+text__color: white
+text__size: 14px
+page__heading: 42px
+sub__heading: 30px
+footer__bg: '#020e3b'
+
