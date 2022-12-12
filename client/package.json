@@ -13,8 +13,6 @@
     "@emotion/server": "^11.10.0",
     "cookies-next": "^2.1.1",
     "daisyui": "^2.40.1",
-    "embla-carousel-autoplay": "^7.0.5",
-    "embla-carousel-react": "^7.0.5",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "lottie-react": "^2.3.1",
