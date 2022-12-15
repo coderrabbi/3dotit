@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from '../PageTitle/PageTitle';
 import { FaPhoneVolume } from 'react-icons/fa';
+import Loader from '../Loader/Loader';
 const Contact = () => {
     return (
         <div className="dark:bg-primary bg-white">
@@ -37,6 +38,7 @@ const Contact = () => {
                     <p>+8801775225448</p>
                 </div>
             </div>
+            <Loader />
         </div>
     );
 };

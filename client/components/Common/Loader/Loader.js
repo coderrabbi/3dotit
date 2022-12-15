@@ -1,17 +1,24 @@
 import React from 'react';
-
+import styles from '../../../styles/loader.module.css';
 const Loader = () => {
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-300">
-            {/* <div class="flex space-x-2 animate-pulse">
-                <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-                <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-                <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-            </div> */}
-            <div class="snippet relative w-full" data-title=".dot-bricks">
-                <div class="stage">
-                    <div class="dot-bricks"></div>
-                </div>
+        <div className="flex justify-center items-center flex-col py-20 h-screen bg-transparent">
+            <div className={styles.wrapper}>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.shadow}></div>
+                <div className={styles.shadow}></div>
+                <div className={styles.shadow}></div>
+            </div>
+            <div className={styles.spinner}>
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
             </div>
         </div>
     );
