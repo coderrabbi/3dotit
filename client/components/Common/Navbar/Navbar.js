@@ -92,9 +92,9 @@ const Navbar = () => {
                         {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                             3DotIt
                         </span> */}
-                        <button data-text="Awesome" class="button">
-                            <span class="actual-text">&nbsp;3Dotit&nbsp;</span>
-                            <span class="hover-text" aria-hidden="true">
+                        <button data-text="Awesome" className="button">
+                            <span className="actual-text">&nbsp;3Dotit&nbsp;</span>
+                            <span className="hover-text" aria-hidden="true">
                                 &nbsp;3DotIt&nbsp;
                             </span>
                         </button>
@@ -206,7 +206,7 @@ const Navbar = () => {
                                             </button>
                                         </Link>
                                         <Link href="/auth/register">
-                                            <button className="border border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black w-[350px] text-slate-900 dark:text-white rounded py-2 px-3">
+                                            <button className="border text-gray-200 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black w-[350px] dark:text-white rounded py-2 px-3">
                                                 Register
                                             </button>
                                         </Link>

@@ -13,9 +13,9 @@ const Hero = () => {
         };
     });
     return (
-        <section className="bg-white dark:bg-primary px-10 relative mb-10">
+        <section className="bg-white dark:bg-primary px-10 relative mb-10 pb-10">
             <div className="flex justify-between items-center">
-                <div className="gradient-hero" />
+                {/* <div className="gradient-hero" /> */}
                 <div className=" flex flex-col flex-1 gap-3">
                     <h2 className="text-6xl font-bold text-primary dark:text-white">
                         Web Service <span className="text-primary_btn">Solution</span>
@@ -59,7 +59,7 @@ const Hero = () => {
                     )}
                 </div>
 
-                <Lottie animationData={data} className="w-[50%] " />
+                <Lottie animationData={data} className="w-[50%]" />
             </div>
         </section>
     );

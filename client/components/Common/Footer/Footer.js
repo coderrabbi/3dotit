@@ -9,14 +9,14 @@ import {
 } from 'react-icons/fa';
 const Footer = () => {
     return (
-        <div className="dark:bg-slate-700 bg-[#020e3b] p-10 relative z-50">
+        <div className="dark:bg-[#020e3b] bg-white p-10 relative z-50">
             {' '}
-            <div className="dark:bg-slate-700  text-white">
+            <div className="dark:bg-[#020e3b]  text-primary dark:text-white">
                 <div className="flex justify-start items-center gap-2">
                     <img src="/assets/3dotit.svg" alt="3dotit" className="h-12 w-12" />
                     <h3>3DotIt</h3>
                 </div>
-                <div className="flex justify-between items-center border-b border-b-gray-300">
+                <div className="flex flex-col md:flex-row justify-between items-center border-b border-b-gray-300">
                     <div className="flex justify-start py-3 gap-3 items-center">
                         <Link href="/about" passHref>
                             About us
@@ -38,7 +38,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="text-center">
-                <h2 className="text-white py-10">
+                <h2 className=" text-primary dark:text-white py-10">
                     &copy; 2023 || All Right Reserved by <a href="https://3dotit">3Dotit</a>
                 </h2>
             </div>
