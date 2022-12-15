@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Head from 'next/head';
 
 import { ThemeProvider } from 'next-themes';
+import Layout from '../components/Layout/Layout';
 function MyApp(props) {
     const { Component, pageProps } = props;
 
@@ -15,7 +16,9 @@ function MyApp(props) {
                 />
             </Head>
 
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </ThemeProvider>
     );
 }

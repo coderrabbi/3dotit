@@ -120,11 +120,11 @@ a {
 }
 .gradient-hero {
     position: absolute;
-    width: 404px;
-    height: 800px;
-    left: 20%;
-    top: 5%;
-    background: #6509845f;
+    width: 300px;
+    height: 500px;
+    left: 10%;
+    top: 0;
+    background: #af17e25f;
     filter: blur(210px);
     transform: rotate(-114.2deg);
 }

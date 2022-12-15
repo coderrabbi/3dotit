@@ -10,7 +10,7 @@ import Head from 'next/head';
 const login = () => {
     const [passShow, setPassShow] = useState(true);
     return (
-        <Layout>
+        <>
             <Head>
                 <title>Please Login</title>
                 <link rel="icon" href="/assets/3dotit.svg" />
@@ -100,7 +100,7 @@ const login = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 
