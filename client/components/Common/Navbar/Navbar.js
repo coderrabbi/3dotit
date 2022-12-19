@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
-import styles from '../../../styles/Navbar.module.css';
 const menuItems = [
     {
         name: 'Home',
@@ -116,7 +115,7 @@ const Navbar = () => {
                                             router.asPath === item.path
                                                 ? 'border-b-2 border-primary_btn text-primary_btn dark:text-primary_btn'
                                                 : ''
-                                        } block py-2 pr-4 pl-3 text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
+                                        } block py-2 pr-4 pl-3 font-medium text-sm text-gray-200 bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white`}
                                         aria-current="page"
                                     >
                                         {item.name}
@@ -126,12 +125,20 @@ const Navbar = () => {
                             <li>
                                 <span className="flex justify-between items-center gap-3">
                                     <Link href="/auth/login">
-                                        <button className="bg-primary_btn text-black dark:text-black rounded py-2 px-3">
+                                        <button
+                                            className="border border-primary_btn bg-primary_btn inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out dark:text-black text-black md:w-fit"
+                                            data-mdb-ripple="true"
+                                            data-mdb-ripple-color="light"
+                                        >
                                             Login
                                         </button>
                                     </Link>
                                     <Link href="/auth/register">
-                                        <button className="border border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black dark:text-white text-gray-200 rounded py-2 px-3">
+                                        <button
+                                            className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                                            data-mdb-ripple="true"
+                                            data-mdb-ripple-color="light"
+                                        >
                                             Register
                                         </button>
                                     </Link>
@@ -201,12 +208,20 @@ const Navbar = () => {
                                 <li>
                                     <span className="flex flex-col lg:flex-row md:w-fit w-full justify-between items-center gap-3">
                                         <Link href="/auth/login">
-                                            <button className="bg-primary_btn dark:text-black text-black rounded py-2 px-3 w-[350px] md:w-fit">
+                                            <button
+                                                className="border border-primary_btn bg-primary_btn inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out dark:text-black text-black md:w-fit"
+                                                data-mdb-ripple="true"
+                                                data-mdb-ripple-color="light"
+                                            >
                                                 Login
                                             </button>
                                         </Link>
                                         <Link href="/auth/register">
-                                            <button className="border text-gray-200 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black w-[350px] dark:text-white rounded py-2 px-3">
+                                            <button
+                                                className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                                                data-mdb-ripple="true"
+                                                data-mdb-ripple-color="light"
+                                            >
                                                 Register
                                             </button>
                                         </Link>

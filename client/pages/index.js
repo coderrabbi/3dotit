@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
-import HomeScreen from '../components/HomeScreen/HomeScreen';
+// import HomeScreen from '../components/HomeScreen/HomeScreen';
 import Loader from '../components/Common/Loader/Loader';
-
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+const HomeScreen = dynamic(() => import('../components/HomeScreen/HomeScreen'), {
+    suspense: true,
+});
 export default function Home() {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
@@ -23,7 +27,13 @@ export default function Home() {
                 <meta name="description" content="3DotIt a Digital web Service Provider" />
                 <link rel="icon" href="/assets/3dotit.svg" />
             </Head>
-            {loading ? <Loader /> : <HomeScreen />}
+            {loading ? (
+                <Loader />
+            ) : (
+                <Suspense fallback={<Loader />}>
+                    <HomeScreen />
+                </Suspense>
+            )}
         </div>
     );
 }
