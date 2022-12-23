@@ -1,8 +1,10 @@
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
+import React, { useContext, useEffect, useState } from 'react';
+import { BsFillMoonStarsFill, BsSunFill, BsPersonCircle } from 'react-icons/bs';
+import { AuthContext } from '../../../context/AuthProvider';
 const menuItems = [
     {
         name: 'Home',
@@ -37,6 +39,7 @@ const menuItems = [
 ];
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
     const router = useRouter();
     const { systemTheme, theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -123,27 +126,65 @@ const Navbar = () => {
                                 </li>
                             ))}
                             <li>
-                                <span className="flex justify-between items-center gap-3">
-                                    <Link href="/auth/login">
-                                        <button
-                                            className="border border-primary_btn bg-primary_btn inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out dark:text-black text-black md:w-fit"
-                                            data-mdb-ripple="true"
-                                            data-mdb-ripple-color="light"
-                                        >
-                                            Login
-                                        </button>
-                                    </Link>
-                                    <Link href="/auth/register">
-                                        <button
-                                            className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
-                                            data-mdb-ripple="true"
-                                            data-mdb-ripple-color="light"
-                                        >
-                                            Register
-                                        </button>
-                                    </Link>
-                                    <div>{renderThemeChanger()}</div>
-                                </span>
+                                {user ? (
+                                    <div className="flex justify-between items-center gap-3">
+                                        <div className="dropdown dropdown-end">
+                                            <label tabIndex={0} className="cursor-pointer">
+                                                {user.photoURL ? (
+                                                    <Image
+                                                        src={user.photoURL}
+                                                        height={30}
+                                                        width={30}
+                                                        className="rounded-full"
+                                                    />
+                                                ) : (
+                                                    <BsPersonCircle className="text-3xl rounded-full text-green-600" />
+                                                )}
+                                            </label>
+                                            <ul
+                                                tabIndex={0}
+                                                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                                            >
+                                                <li>
+                                                    <Link href="/user/profile">Profile</Link>
+                                                </li>
+                                                <li>
+                                                    <button
+                                                        onClick={logOut}
+                                                        className="border border-primary_btn bg-primary_btn inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out dark:text-black text-black w-full my-3"
+                                                        data-mdb-ripple="true"
+                                                        data-mdb-ripple-color="light"
+                                                    >
+                                                        Logout
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>{renderThemeChanger()}</div>
+                                    </div>
+                                ) : (
+                                    <span className="flex justify-between items-center gap-3">
+                                        <Link href="/auth/login">
+                                            <button
+                                                className="border border-primary_btn bg-primary_btn inline-block px-6 py-2.5  font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-primary_btn hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out dark:text-black text-black md:w-fit"
+                                                data-mdb-ripple="true"
+                                                data-mdb-ripple-color="light"
+                                            >
+                                                Login
+                                            </button>
+                                        </Link>
+                                        <Link href="/auth/register">
+                                            <button
+                                                className="border inline-block px-6 py-2.5 border-primary_btn hover:bg-primary_btn hover:text-black dark:hover:text-black dark:text-white text-gray-200 font-medium text-sm leading-tight uppercase rounded shadow-md hover:shadow-lg focus:bg-primary_btn focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary_btn active:shadow-lg transition duration-150 ease-in-out  md:w-fit"
+                                                data-mdb-ripple="true"
+                                                data-mdb-ripple-color="light"
+                                            >
+                                                Register
+                                            </button>
+                                        </Link>
+                                        <div>{renderThemeChanger()}</div>
+                                    </span>
+                                )}
                             </li>
                         </ul>
                     </div>
@@ -158,7 +199,7 @@ const Navbar = () => {
                                 <div className="block w-8 absolute gap-1 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                     <span
                                         aria-hidden="true"
-                                        class={`block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out ${
+                                        className={`block absolute h-0.5 w-8 bg-current transform transition duration-500 ease-in-out ${
                                             isMenu ? 'rotate-45' : '-translate-y-1.5'
                                         }`}
                                     ></span>
