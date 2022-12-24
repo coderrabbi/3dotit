@@ -78,6 +78,23 @@ const AuthProvider = ({ children }) => {
     const verifyEmail = () => {
         return sendEmailVerification(auth.currentUser);
     };
+    function updateDisplayName(displayName) {
+        // Get the currently signed-in user
+        const user = auth.currentUser;
+
+        // Update the display name
+        user.updateProfile({
+            displayName: displayName,
+        })
+            .then(function () {
+                // Update successful.
+                console.log('Display name successfully updated');
+            })
+            .catch(function (error) {
+                // An error happened.
+                console.error(error);
+            });
+    }
 
     useEffect(() => {
         const unsbscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -110,6 +127,7 @@ const AuthProvider = ({ children }) => {
         handleGithubSignIn,
         googleSignIn,
         verifyEmail,
+        updateDisplayName,
     };
     return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };
