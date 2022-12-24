@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
 import { BsFillEyeSlashFill, BsFillEyeFill } from 'react-icons/bs';
 const register = () => {
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+    const { createUser, updateUser, verifyEmail } = useContext(AuthContext);
     const [passShow, setPassShow] = useState(false);
 
     const [isConfirmPassShow, setIsConfirmPassShow] = useState(false);
@@ -19,6 +19,11 @@ const register = () => {
     };
     const handlePassShow = () => {
         setPassShow(!passShow);
+    };
+    const handleEmailVerification = () => {
+        verifyEmail().then(() => {
+            console.log('please verify email');
+        });
     };
     const registerUser = (e) => {
         e.preventDefault();
@@ -38,7 +43,7 @@ const register = () => {
             setIsLoading(true);
             createUser(email, password)
                 .then(() => {
-                    updateUserProfile({ displayName: fullName, photoURL }).then(() => {
+                    updateUser({ displayName: fullName, photoURL }).then(() => {
                         // Profile updated!
                         setIsLoading(false);
                         setSuccessMessage('Registration successful');
@@ -99,8 +104,6 @@ const register = () => {
                             <input
                                 class="pl-2 w-full outline-none border-none bg-transparent"
                                 type="text"
-                                name=""
-                                id=""
                                 placeholder="Full name"
                                 value={fullName}
                                 onChange={(e) => setFullName(e.target.value)}
@@ -127,8 +130,6 @@ const register = () => {
                             <input
                                 class="pl-2 w-full outline-none border-none bg-transparent"
                                 type="text"
-                                name=""
-                                id=""
                                 placeholder="Email Address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -152,8 +153,6 @@ const register = () => {
                             <input
                                 class="pl-2 w-full outline-none border-none bg-transparent"
                                 type={`${passShow ? 'text' : 'password'}`}
-                                name=""
-                                id=""
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
@@ -190,8 +189,6 @@ const register = () => {
                             <input
                                 class="pl-2 w-full outline-none border-none bg-transparent"
                                 type={`${isConfirmPassShow ? 'text' : 'password'}`}
-                                name=""
-                                id=""
                                 placeholder="Confirm Password"
                                 value={cPassword}
                                 onChange={(e) => setCPassword(e.target.value)}

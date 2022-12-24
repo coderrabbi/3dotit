@@ -5,6 +5,7 @@ import {
     GithubAuthProvider,
     GoogleAuthProvider,
     onAuthStateChanged,
+    sendEmailVerification,
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
@@ -21,6 +22,7 @@ const AuthProvider = ({ children }) => {
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(true);
     const [tokenId, setTokenId] = useState('');
+    const [token, setToken] = useState('');
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     };
@@ -73,12 +75,21 @@ const AuthProvider = ({ children }) => {
                 setMessage(error.message);
             });
     };
+    const verifyEmail = () => {
+        return sendEmailVerification(auth.currentUser);
+    };
 
     useEffect(() => {
         const unsbscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false);
             return () => unsbscribe();
+        });
+        const fireToken = auth.onIdTokenChanged(async (user) => {
+            if (user) {
+                const { token } = await user.getIdTokenResult();
+                setToken(token);
+            }
         });
     }, []);
     const logOut = () => {
@@ -94,9 +105,11 @@ const AuthProvider = ({ children }) => {
         loading,
         setTokenId,
         tokenId,
+        token,
         setLoading,
         handleGithubSignIn,
         googleSignIn,
+        verifyEmail,
     };
     return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };

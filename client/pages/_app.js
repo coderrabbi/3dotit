@@ -1,10 +1,11 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import { SessionProvider } from 'next-auth/react';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'next-themes';
 import Layout from '../components/Layout/Layout';
 import { useEffect } from 'react';
 import AuthProvider from '../context/AuthProvider';
+import { store } from '../redux/store';
 function MyApp(props) {
     const {
         Component,
@@ -17,7 +18,7 @@ function MyApp(props) {
         use();
     }, []);
     return (
-        <SessionProvider session={session}>
+        <Provider store={store}>
             <AuthProvider>
                 <ThemeProvider enableSystem={true} attribute="class">
                     <Head>
@@ -33,7 +34,7 @@ function MyApp(props) {
                     </Layout>
                 </ThemeProvider>
             </AuthProvider>
-        </SessionProvider>
+        </Provider>
     );
 }
 

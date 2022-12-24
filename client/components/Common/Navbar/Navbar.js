@@ -39,7 +39,7 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, token } = useContext(AuthContext);
     const router = useRouter();
     const { systemTheme, theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -47,6 +47,7 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenu(!isMenu);
     };
+    console.log(user);
     useEffect(() => {
         setMounted(true);
         window.localStorage.setItem('theme', theme);
@@ -135,6 +136,7 @@ const Navbar = () => {
                                                         src={user.photoURL}
                                                         height={30}
                                                         width={30}
+                                                        alt={user.displayName}
                                                         className="rounded-full"
                                                     />
                                                 ) : (
