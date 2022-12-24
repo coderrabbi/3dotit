@@ -22,6 +22,16 @@ const profile = () => {
                         </div>
 
                         <div className="mt-16">
+                            {user?.emailVerified === false ? (
+                                <p className="text-sm text-red-500 text-center font-semibold">
+                                    Please Varify your email
+                                </p>
+                            ) : (
+                                <p className="text-sm text-green-500 text-center font-semibold">
+                                    Email Verified
+                                </p>
+                            )}
+
                             <h1 className="font-bold text-center text-3xl text-gray-900">
                                 {user?.displayName}
                             </h1>
