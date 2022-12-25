@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
         setUser(user);
         if (user.uid) {
           setTokenId(user.uid);
-          // navigate(from, { replace: true });
+          navigate(from, { replace: true });
           setLoading(false);
 
           toast.success("login sucessfull");
