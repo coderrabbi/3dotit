@@ -13,6 +13,8 @@ import {
 } from 'firebase/auth';
 import { fireApp } from '../Firebase/Firebase.cofig';
 
+import { axiosAuth } from '../utils/axios';
+
 // import { Navigate, useLocation, useNavigate } from "react-router-dom";
 export const AuthContext = createContext();
 
@@ -106,6 +108,14 @@ const AuthProvider = ({ children }) => {
             if (user) {
                 const { token } = await user.getIdTokenResult();
                 setToken(token);
+                axiosAuth
+                    .post(`/current-user`, {})
+                    .then((res) => {
+                        console.log('RES====>', res);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             }
         });
     }, []);

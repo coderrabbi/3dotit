@@ -12,7 +12,7 @@ const profile = () => {
             console.log('profile updated');
         });
     };
-    useEffect(() => {}, [user]);
+    useEffect(() => {}, [updateUser]);
 
     return (
         <section className="bg-slate-100">
