@@ -76,7 +76,7 @@ const Hero = () => {
           <div className="absolute z-[0] w-[90%] h-[69%] bottom-0 right-0 bg-[#810ca89b] blur-[120px] " />
         </div>
       </div>
-      <div className="absolute z-[6] w-[100%] h-[25%] bottom-[-79px] left-0 bg-primary blur-[30px] overflow-hidden" />
+      <div className="absolute z-[6] w-[100%] h-[25%] bottom-[-79px] left-0 dark:bg-primary blur-[30px] overflow-hidden bg-gray-50" />
     </section>
   );
 };
