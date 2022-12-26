@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import bg from "../../assets/pattern.svg";
 import data from "../../assets/hero.json";
 import Lottie from "lottie-react";
 // import '@dotlottie/player-component';
+
 import { PopupButton, PopupWidget } from "react-calendly";
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
@@ -12,9 +14,16 @@ const Hero = () => {
       setMounted(false);
     };
   });
+  console.log(bg, data);
   return (
     <section className="bg-white  dark:bg-primary px-10 relative mb-10 pb-10">
-      <div className="flex-col flex md:flex-row md:mt-[-50px] justify-between items-center">
+      <div className="absolute h-full w-full top-0 left-0 z-2 bg-primary/20" />
+      <img
+        src="https://i.ibb.co/99BttDF/banner.png"
+        alt=""
+        className=" blur-[1px] h-full w-full absolute top-0 left-0 z-1"
+      />
+      <div className="flex-col relative z-5 flex md:flex-row md:mt-[-50px] justify-between items-center">
         {/* <div className="gradient-hero" /> */}
         <div className=" flex pt-12 flex-col flex-1 gap-3">
           <h2 className="text-6xl font-bold text-primary dark:text-white">
@@ -65,9 +74,9 @@ const Hero = () => {
             className="realtive z-[5] w-[100%] h-[100%]"
           />
           <div className="absolute z-[0] w-[90%] h-[69%] bottom-0 right-0 bg-[#810ca89b] blur-[120px] " />
-          <div className="absolute z-[6] w-[100%] h-[25%] bottom-[-79px] right-0 bg-primary blur-[30px] " />
         </div>
       </div>
+      <div className="absolute z-[6] w-[100%] h-[25%] bottom-[-79px] left-0 bg-primary blur-[30px] overflow-hidden" />
     </section>
   );
 };
