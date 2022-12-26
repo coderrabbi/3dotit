@@ -4,10 +4,10 @@ import { getAuth } from 'firebase/auth';
 import { fireApp } from '../Firebase/Firebase.cofig';
 const auth = getAuth(fireApp);
 export const axiosPublic = axios.create({
-    baseURL: `http://localhost:5000/api`,
+    baseURL: process.env.api,
 });
 export const axiosAuth = axios.create({
-    baseURL: `http://localhost:5000/api`,
+    baseURL: process.env.api,
 });
 axiosAuth.interceptors.request.use(
     async (config) => {

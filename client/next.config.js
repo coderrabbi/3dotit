@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    env: {
+        api: 'http://localhost:5000/api',
+    },
     reactStrictMode: true,
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'lh3.googleusercontent.com',
-                port: '',
-            },
-        ],
+        domains: ['lh3.googleusercontent.com'],
     },
 };
 

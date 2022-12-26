@@ -2,7 +2,7 @@ const admin = require('../../firbase');
 const currentUser = async (req, res) => {
     try {
         const firebaseUser = await admin.auth().verifyIdToken(req.headers.token);
-        console.log('FIREBASE CURRENT USER AFTER TOKEN ====>', firebaseUser);
+
         res.status(200).json({
             user: firebaseUser,
         });
@@ -19,5 +19,11 @@ const login = (req, res) => {
         message: 'Hello World',
     });
 };
+const privateRoute = (req, res) => {
+    console.log('token in private route', req.headers.token);
+    res.json({
+        ok: true,
+    });
+};
 
-module.exports = { login, currentUser };
+module.exports = { login, currentUser, privateRoute };
