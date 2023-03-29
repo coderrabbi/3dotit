@@ -82,7 +82,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed w-full mx-auto animate-in z-[100] mb-10">
+    <header className="sticky top-0 w-full mx-auto animate-in z-[100] ">
       <nav className="bg-[#00072d1b]/60 lg:w-full backdrop-blur-sm dark:backdrop-blur-sm border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-[#00072d]/50 ">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link href="/" className="flex items-center">
