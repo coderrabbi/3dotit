@@ -4,11 +4,6 @@ import Carousel from "./Carousel";
 import CarouselItem from "./CarouselItem";
 
 const Features = () => {
-  for (let i = 0; i < 3; i++) {
-    setTimeout(function () {
-      alert(i);
-    }, 1000 + i);
-  }
   return (
     <div className="services ">
       <PageTitle>Our Features Product</PageTitle>
