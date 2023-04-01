@@ -6,7 +6,7 @@ import Service from "./Service.js";
 
 const Services = () => {
   return (
-    <div className="dark:bg-primary bg-white  flex flex-col  ">
+    <div className="  flex flex-col  ">
       <PageTitle>Our Services</PageTitle>
       <div className="px-10 grid md:grid-cols-3  relative z-[2]">
         <Card image="/assets/3Dotit_instant_support.svg" />

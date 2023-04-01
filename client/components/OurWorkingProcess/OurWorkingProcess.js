@@ -7,8 +7,10 @@ const OurWorkingProcess = ({ styles }) => {
       <div>
         <div
           id="#work"
-          className="dark:bg-primary dark:text-white text-primary bg-white py-8  relative "
+          className=" work dark:text-white text-primary  py-8  relative "
         >
+          <div className="absolute z-[1] w-[40%] h-[29%] top-0 left-0 bg-[#810ca89b] blur-[100px] " />
+          <div className=" hero__patarn  absolute top-0 right-0 left-0 z-2"></div>
           <PageTitle>our working process</PageTitle>
 
           <div className="container z-[10] relative mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
@@ -25,7 +27,7 @@ const OurWorkingProcess = ({ styles }) => {
               </p>
               <a
                 href="#"
-                className="bg-transparent mr-auto hover:bg-secondary text-secondary hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-secondary hover:border-transparent"
+                className="bg-transparent dark:bg-primary_btn mr-auto hover:bg-secondary text-secondary hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-secondary hover:border-transparent"
               >
                 Explore Now
               </a>

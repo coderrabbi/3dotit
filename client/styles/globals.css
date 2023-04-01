@@ -430,3 +430,52 @@ a {
 .service .content .btn-link:hover {
   border-bottom: 1px solid #1d8122;
 }
+
+.hero__patarn {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyAgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBoZWlnaHQ9IjE4MHB4IiB3aWR0aD0iMTgwcHgiIHZpZXdCb3g9IjAgMCAxODAgMTgwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wLDIxLjY4YTUwLDUwLDAsMCwwLDM5Ljc3LDI4QTQwLjEsNDAuMSwwLDAsMSwwLDg1LjA1Vjk1YTQwLjEsNDAuMSwwLDAsMSwzOS43NywzNS4zN0E1MCw1MCwwLDAsMCwwLDE1OC4zMlYxODBINWE0MC4wOSw0MC4wOSwwLDAsMSwzNS4zNy0zOS43Niw1MC4wOCw1MC4wOCwwLDAsMCwyOCwzOS43Nmg0My4zNmE1MC4wOCw1MC4wOCwwLDAsMCwyOC0zOS43NkE0MC4wOSw0MC4wOSwwLDAsMSwxNzUuMDUsMTgwSDE4MFYxNTguMzJhNTAsNTAsMCwwLDAtMzkuNzctMjhBNDAuMSw0MC4xLDAsMCwxLDE4MCw5NXYtOS45YTQwLjEsNDAuMSwwLDAsMS0zOS43Ny0zNS4zNyw1MCw1MCwwLDAsMCwzOS43Ny0yOFYwaC00Ljk1YTQwLjA5LDQwLjA5LDAsMCwxLTM1LjM3LDM5Ljc2QTUwLjA4LDUwLjA4LDAsMCwwLDExMS42NSwwSDY4LjM1YTUwLjA4LDUwLjA4LDAsMCwwLTI4LDM5Ljc2QTQwLjA5LDQwLjA5LDAsMCwxLDUsMEgwWk05MCwxNzUuMDVhNDAuMSw0MC4xLDAsMCwxLTM5Ljc3LTM1LjM3LDUwLDUwLDAsMCwwLDM5Ljc3LTI4LDUwLDUwLDAsMCwwLDM5Ljc3LDI4QTQwLjEsNDAuMSwwLDAsMSw5MCwxNzUuMDVaTTE1OC4zMiw5MGE1MC4wOCw1MC4wOCwwLDAsMC0yOCwzOS43Niw0MCw0MCwwLDAsMSwwLTc5LjUyQTUwLjA4LDUwLjA4LDAsMCwwLDE1OC4zMiw5MFpNOTAsNWE0MC4xLDQwLjEsMCwwLDEsMzkuNzcsMzUuMzdBNTAsNTAsMCwwLDAsOTAsNjguMzJhNTAsNTAsMCwwLDAtMzkuNzctMjhBNDAuMSw0MC4xLDAsMCwxLDkwLDVaTTQ5LjY4LDUwLjI0YTQwLDQwLDAsMCwxLDAsNzkuNTJBNTAuMDgsNTAuMDgsMCwwLDAsMjEuNjgsOTAsNTAuMDgsNTAuMDgsMCwwLDAsNDkuNjgsNTAuMjRaIi8+PC9zdmc+);
+  background-size: 10px auto;
+  background-position: 0 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  color: white !important;
+  top: 0;
+  background-repeat: repeat;
+}
+.hero__b {
+  background-size: initial;
+  background-repeat: repeat;
+  background-image: linear-gradient(
+      180deg,
+      #1d2e8f 0%,
+      #00072dc9 30%,
+      #00072d9f,
+      65%,
+      #00072d 100%
+    ),
+    url(https://www.elegantthemes.com/layouts/wp-content/uploads/2023/02/gradient-bg-02-2.jpg) !important;
+}
+.work {
+  background-size: initial;
+  background-repeat: repeat;
+  background-image: linear-gradient(
+      180deg,
+      #010a47 0%,
+      #020e3b 30%,
+      rgba(255, 255, 255, 0) 65%,
+      #090915 100%
+    ),
+    url(https://www.elegantthemes.com/layouts/wp-content/uploads/2023/02/gradient-bg-02-2.jpg) !important;
+}
+.services {
+  background-size: initial;
+  background-repeat: repeat;
+  background-position: center bottom 0px;
+  background-image: linear-gradient(
+      180deg,
+      #0f0122 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url(https://www.elegantthemes.com/layouts/wp-content/uploads/2023/02/grid-bg-2.png) !important;
+}

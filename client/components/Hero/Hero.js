@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import bg from "../../assets/pattern.svg";
+// import bg from "../../assets/pattern.svg";
+// import bg from "../../assets/hero.jpg";
+import bg from "../../assets/download.svg";
 import data from "../../assets/hero.json";
 import Lottie from "lottie-react";
 // import '@dotlottie/player-component';
 
 import { PopupButton, PopupWidget } from "react-calendly";
+import Image from "next/image";
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -15,13 +18,9 @@ const Hero = () => {
     };
   });
   return (
-    <section className="bg-white dark:bg-primary px-10 relative mb-10 pb-10">
+    <section className={`px-10 relative mb-10 pb-10`}>
       <div className="absolute h-full w-full top-0 left-0 z-2 bg-white/20 dark:bg-primary/20" />
-      <img
-        src="https://i.ibb.co/99BttDF/banner.png"
-        alt=""
-        className=" blur-[1px] h-full w-full absolute top-0 left-0 z-1"
-      />
+      <div className=" absolute top-0 right-0 left-0 z-0"></div>
       <div className="flex-col relative z-5 flex md:flex-row md:mt-[-50px] justify-between items-center">
         {/* <div className="gradient-hero" /> */}
         <div className=" flex pt-12 flex-col flex-1 gap-3">
